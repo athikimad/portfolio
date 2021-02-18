@@ -456,7 +456,7 @@ background: beige;
    
    }
 
-   @media(max-width: 767px){
+   @media(min-width: 992px){
     #skill{
         max-width: 100%;
         min-height: 100%;
@@ -809,3 +809,10 @@ background: beige;
     color: blue!important;
     text-decoration: none;
 }
+
+@media(min-width: 992px){
+    .footer{
+        max-width: 100%;
+        min-height: 100%;
+       }
+    }
