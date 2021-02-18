@@ -457,6 +457,10 @@ background: beige;
    }
 
    @media(max-width: 767px){
+    #skill{
+        max-width: 100%;
+        min-height: 100%;
+       }
     #skill_row {
        margin-left: 30px;
     }
