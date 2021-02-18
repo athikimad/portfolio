@@ -426,49 +426,41 @@ a:active {
                       SKILLS
 ======================================================*/
 
-#skills {
-    background-image: url("../img/bg-stats.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+
+#skill{
+background: beige;
+
+}
+#skill_row{
+   margin-left:141px;
+
 }
 
-.skill-cover {
-    background-color: rgba(31, 31, 31, 0.68); 
-    background-color: darkgoldenrod;
+.skill_name{
+ padding: 10px;
+
+}
+.skill_name ul{
+    margin-bottom: 20px;
+
 }
 
-.skill-cover h3{
-  font-family: "hind", sans-serif;
-  font-size: 35px;
-  margin-bottom: 40px;
-}
+.skill_name ul li{
+ list-style: none;
 
-.skill-item {
-    padding: 20px 0;
-    margin-bottom: 30px;
-    background: darkkhaki;
-}
 
-.skill-item i {
-    color: #2196f3;
 }
+.skill_name ul li i{
+   margin-right: 6px;
+   color: blue;
+   
+   }
 
-.skill-item h2 {
-    color: #fff;
-    font-size: "hind", sans-serif;
-    font-size: 35px;
-    font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 1px;
-}
-
-.skill-item p {
-    color: #fff;
-    font-family: "hind", sans-serif;
-    /*text-transform: uppercase;*/
-    font-weight: 300;
-    margin-top: 0;
+   @media(max-width: 767px){
+    #skill_row {
+       margin-left: 30px;
+    }
+    
 }
 
 /*====================================================
