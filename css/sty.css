@@ -438,7 +438,11 @@ min-height:100%;
    
 
 }
-
+.skill_item {
+background-color: azure;
+margin-bottom: 40px;
+box-shadow:2.5px 4.33px 30px 0 rgba(64,87,191,0.1);
+}
 .skill_name{
  padding: 10px;
 
