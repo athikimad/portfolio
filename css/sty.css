@@ -428,16 +428,21 @@ a:active {
 
 
 #skill{
-background: beige;
+background:#f7f9ff
+max-width:100%;
+min-height:100%;
 
 }
 #skill_row{
    margin-left:141px;
+   
 
 }
 
 .skill_name{
  padding: 10px;
+
+ 
 
 }
 .skill_name ul{
