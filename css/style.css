@@ -44,7 +44,6 @@ a {
     font-family: "Open Sans", sans-serif !important;
     margin-top: 0;
     line-height: 22px;
-    margin-bottom: 1rem;
     font-size: 15px;
 }
 
@@ -190,7 +189,6 @@ a:active {
   }
 
   section.resume-section {
-      border-bottom: 1px solid #dee2e6;
       padding-top: 5rem !important;
       padding-bottom: 5rem !important;
   }
@@ -427,49 +425,70 @@ a:active {
 ======================================================*/
 
 #skills {
-    background-image: url("../img/bg-stats.jpg");
+   
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 }
 
 .skill-cover {
-    background-color: rgba(31, 31, 31, 0.68); 
-    background-color: darkgoldenrod;
+    background-color:whitesmoke;
 }
 
 .skill-cover h3{
   font-family: "hind", sans-serif;
   font-size: 35px;
   margin-bottom: 40px;
+  color:crimson;
+}
+.skill_type{
+	color: darkviolet;
+	text-align: left;
+    margin-left: 14px;
+}
+.skill_name{
+ padding: 10px;
+ background-color: azure;
+margin-bottom: 40px;
+box-shadow:2.5px 4.33px 30px 0 rgba(64,87,191,0.1);
+height: 230px;
+
+}
+.skill_name ul{
+    margin-bottom: 20px;
+	text-align: initial;
 }
 
-.skill-item {
-    padding: 20px 0;
-    margin-bottom: 30px;
-    background: darkkhaki;
 }
 
-.skill-item i {
-    color: #2196f3;
+.skill_name ul li{
+ list-style: none;
+ 
+
+
+}
+.skill_name ul li i{
+   margin-right: 6px;
+   color: blue;
+   
+ }
+
+.skill_name ul{
+    margin-bottom: 20px;
+
 }
 
-.skill-item h2 {
-    color: #fff;
-    font-size: "hind", sans-serif;
-    font-size: 35px;
-    font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 1px;
-}
+.skill_name ul li{
+ list-style: none;
 
-.skill-item p {
-    color: #fff;
-    font-family: "hind", sans-serif;
-    /*text-transform: uppercase;*/
-    font-weight: 300;
-    margin-top: 0;
+
 }
+.skill_name ul li i{
+   margin-right: 6px;
+   color: blue;
+   
+   }
+
 
 /*====================================================
                       AWARD
