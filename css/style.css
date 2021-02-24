@@ -40,11 +40,11 @@ a {
     color: #2196f3;
 }
 #p{
-    color: #909090;
-    font-family: "Open Sans", sans-serif !important;
-    margin-top: 0;
+    color: rgb(57, 57, 58);
+    margin-top: 0px;
     line-height: 22px;
-    font-size: 15px;	
+    font-size: 15px;
+    font-family: "Open Sans", sans-serif !important;
 }
 
 a:hover,
