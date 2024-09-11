@@ -708,12 +708,12 @@ color: crimson;" href="https://github.com/developerimadhussain/Web-Projects-2ndF
             var value = $(this).attr('data-filter');
             if(value == "all")
             { 
-                $('.filter').show('1100');
+                $('.filter').show('1000');
             }
             else
             { 
-                $(".filter").not('.'+value).hide('3100');
-                $('.filter').filter('.'+value).show('3100');
+                $(".filter").not('.'+value).hide('3000');
+                $('.filter').filter('.'+value).show('3000');
             }
         });
         
@@ -776,7 +776,7 @@ color: crimson;" href="https://github.com/developerimadhussain/Web-Projects-2ndF
 
 <script>
 $(document).ready(function(){
-	var maxLength = 103;
+	var maxLength = 150;
 	$(".show-read-more").each(function(){
 		var myStr = $(this).text();
 		if($.trim(myStr).length > maxLength){
