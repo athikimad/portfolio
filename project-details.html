@@ -176,57 +176,63 @@
             }
         ];
 
-        // Function to extract the project ID from the URL
-        function getProjectIdFromURL() {
-            const urlParts = window.location.pathname.split('/');
-            return parseInt(urlParts[urlParts.length - 1]); // Extract the last part (ID)
-        }
+        
+    // Function to extract the project ID from the URL query string
+    function getProjectIdFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return parseInt(urlParams.get('id')); // Get the 'id' parameter from the URL
+    }
 
-        // Function to load project details and images based on the ID
-        function loadProjectDetailsById(projectId) {
-            const project = projects.find(p => p.id === projectId);
-            if (project) {
-                // Populate the project info section
-                document.querySelector('.project-info ul').innerHTML = `
-                  <li><strong>Name</strong>: ${project.name}</li>
-                  <li><strong>Category</strong>: ${project.category}</li>
-                  <li><strong>Technology</strong>: ${project.technology}</li>
-                  <li><strong>Project date</strong>: ${project.date}</li>
-                  <li><strong>Project URL</strong>: <a href="#">${project.url}</a></li>
+    // Function to load project details and images based on the ID
+    function loadProjectDetailsById(projectId) {
+        const project = projects.find(p => p.id === projectId);
+        if (project) {
+            // Populate the project info section
+            document.querySelector('.project-info ul').innerHTML = `
+              <li><strong>Name</strong>: ${project.name}</li>
+              <li><strong>Category</strong>: ${project.category}</li>
+              <li><strong>Technology</strong>: ${project.technology}</li>
+              <li><strong>Project date</strong>: ${project.date}</li>
+              <li><strong>Project URL</strong>: <a href="#">${project.url}</a></li>
+            `;
+            document.querySelector('.project-description p').innerHTML = project.description;
+
+            // Populate the swiper slide images dynamically
+            const swiperWrapper = document.querySelector('.swiper-wrapper');
+            swiperWrapper.innerHTML = ''; // Clear any existing slides
+            project.images.forEach(image => {
+                swiperWrapper.innerHTML += `
+                  <div class="swiper-slide">
+                    <img src="${image}" alt="Project Image">
+                  </div>
                 `;
-                document.querySelector('.project-description p').innerHTML = project.description;
+            });
 
-                // Populate the swiper slide images dynamically
-                const swiperWrapper = document.querySelector('.swiper-wrapper');
-                swiperWrapper.innerHTML = ''; // Clear any existing slides
-                project.images.forEach(image => {
-                    swiperWrapper.innerHTML += `
-                      <div class="swiper-slide">
-                        <img src="${image}" alt="Project Image">
-                      </div>
-                    `;
-                });
-
-                // Initialize the Swiper slider after adding images
-                new Swiper('.swiper', {
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                });
-            } else {
-                // Handle case where project ID is not found
-                document.querySelector('.project-info ul').innerHTML = `<li>Project not found.</li>`;
-                document.querySelector('.project-description p').innerHTML = `Sorry, the project details you're looking for could not be found.`;
-            }
+            // Initialize the Swiper slider after adding images
+            new Swiper('.swiper', {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        } else {
+            // Handle case where project ID is not found
+            document.querySelector('.project-info ul').innerHTML = `<li>Project not found.</li>`;
+            document.querySelector('.project-description p').innerHTML = `Sorry, the project details you're looking for could not be found.`;
         }
+    }
 
-        // On document ready, get the project ID and load the project details
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectId = getProjectIdFromURL();
+    // On document ready, get the project ID from the query string and load the project details
+    document.addEventListener('DOMContentLoaded', () => {
+        const projectId = getProjectIdFromURL();
+        if (!isNaN(projectId)) {
             loadProjectDetailsById(projectId);
-        });
-    </script>
+        } else {
+            document.querySelector('.project-description p').innerHTML = 'Invalid project ID.';
+        }
+    });
+</script>
+
 
 </body>
 
